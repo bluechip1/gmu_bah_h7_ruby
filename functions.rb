@@ -7,9 +7,9 @@ end
 # For example, histogram('Hello') returns {'h'=>1,'e'=>1,'l'=>2,'o'=>1}
 def histogram(a_string)
  a_string = a_string.downcase
- frequencies = Hash.new(0)
- a_string.each_char { |a_string| frequencies[a_string] += 1 }
- frequencies.each { |a_string, frequency| puts a_string + ' ' + frequency.to_s }
+ hist = Hash.new(0)
+ a_string.each_char { |a_string| hist[a_string] += 1 }
+ return hist
 end
 
 # Sum all the numbers in the array
