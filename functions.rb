@@ -31,11 +31,24 @@ end
 # Otherwise, the element is simply the value of i
 # For example [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', ..., 14, 'FizzBuzz', ...]
 def fizzbuzz
+  new_array = []
+  (1..100).select do |i|
+    if i.remainder(5) == 0 && i.remainder(3) == 0
+       new_array<<"FizzBuzz"
+    elsif i.remainder(3) == 0
+       new_array<<"Fizz"
+    elsif i.remainder(5) == 0
+        new_array<<"Buzz"
+    else
+        new_array<<i
+    end
+  end
+  return new_array
 end
 
 # Uncomment each of these to test your functions
 puts reverse([3,6,'dog']).inspect
 puts histogram('The Quick brown fox').inspect
 puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
-# puts fizzbuzz.join("\n")
+puts fizzbuzz.join("\n")
 
