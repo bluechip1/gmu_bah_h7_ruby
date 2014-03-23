@@ -1,5 +1,6 @@
 # Return a reversed copy of the array
 def reverse(an_array)
+ reverse = an_array.reverse
 end
 
 # Return a map of letters and counts of letters
@@ -18,6 +19,8 @@ end
 # (Hint: the is_a? method might be useful here)
 # 
 def sum_only_numbers(an_array)
+ temp = an_array.map {|x| Float(x) rescue nil }.compact
+ temp.inject(0) {|sum, i|sum + i}
 end
 
 # For i from 1 to 100, return an array.
@@ -31,8 +34,8 @@ def fizzbuzz
 end
 
 # Uncomment each of these to test your functions
-# puts reverse([3,6,'dog']).inspect
-# puts histogram('The Quick brown fox').inspect
-# puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
+puts reverse([3,6,'dog']).inspect
+puts histogram('The Quick brown fox').inspect
+puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
 # puts fizzbuzz.join("\n")
 
