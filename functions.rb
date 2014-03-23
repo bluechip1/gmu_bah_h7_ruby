@@ -19,7 +19,7 @@ end
 # (Hint: the is_a? method might be useful here)
 # 
 def sum_only_numbers(an_array)
- temp = an_array.map {|x| Float(x) rescue nil }.compact
+ temp = an_array.map {|x| x.is_a?(Numeric) ? x : nil }.compact
  temp.inject(0) {|sum, i|sum + i}
 end
 
